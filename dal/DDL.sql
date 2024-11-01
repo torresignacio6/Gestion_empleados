@@ -8,7 +8,7 @@ CREATE  TABLE Empleados (
     salario DECIMAL(10, 2)
 );
 
-CREATE  TABLE Departamentos (
+CREATE TABLE Departamentos (
     id INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL,
     id_gerente INT,

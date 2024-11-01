@@ -1,5 +1,5 @@
 from bd import obtener_conexion
-class  Departamento:
+class Departamento:
     def __init__(self, nombre, id_gerente):
         self.nombre = nombre
         self.id_gerente = id_gerente

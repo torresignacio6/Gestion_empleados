@@ -5,7 +5,7 @@ INSERT  INTO Empleados (nombre, direccion, telefono, email, fecha_inicio, salari
 ('Ana Martínez', 'Calle Norte 101, Ciudad D', '555-4321', 'ana.martinez@gmail.com', '2020-02-20', 47000.00),
 ('Luis Fernández', 'Av. Sur 202, Ciudad E', '555-6789', 'luis.fernandez@gmail.com', '2019-05-30', 55000.00);
 
-INSERT  INTO Departamentos (nombre, id_gerente) VALUES
+INSERT INTO Departamentos (nombre, id_gerente) VALUES
 ('Desarrollo Sostenible', 1),
 ('Investigación y Desarrollo', 2),
 ('Ventas', 3),
