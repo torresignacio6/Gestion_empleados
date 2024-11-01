@@ -1,4 +1,4 @@
-import  mysql.connector
+import mysql.connector
 from  mysql.connector import errorcode
 
 def obtener_conexion(user,password,server,database, consulta):

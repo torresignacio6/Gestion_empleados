@@ -6,7 +6,7 @@ class Proyecto:
         self.fecha_inicio = fecha_inicio
     
     @staticmethod
-    def  crear_proyecto(proyecto):
+    def crear_proyecto(proyecto):
         conexion = obtener_conexion()
         cursor = conexion.cursor()
         query = "INSERT INTO Proyectos (nombre, descripcion, fecha_inicio) VALUES (%s, %s, %s)"

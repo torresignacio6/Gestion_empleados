@@ -9,7 +9,7 @@ class Empleado:
         self.salario = salario
     
     @staticmethod
-    def  crear_empleado(empleado):
+    def crear_empleado(empleado):
         conexion = obtener_conexion()
         cursor = conexion.cursor()
         query = """
