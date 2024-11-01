@@ -5,7 +5,7 @@ class Departamento:
         self.id_gerente = id_gerente
     
     @staticmethod
-    def crear_departamento(departamento):
+    def  crear_departamento(departamento):
         conexion = obtener_conexion()
         cursor = conexion.cursor()
         query = "INSERT INTO Departamentos (nombre, id_gerente) VALUES (%s, %s)"

@@ -1,5 +1,5 @@
 from bd import obtener_conexion
-class Proyecto:
+class  Proyecto:
     def __init__(self, nombre, descripcion, fecha_inicio):
         self.nombre = nombre
         self.descripcion = descripcion
