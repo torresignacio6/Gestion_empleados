@@ -1,4 +1,4 @@
-INSERT INTO Empleados (nombre, direccion, telefono, email, fecha_inicio, salario) VALUES
+INSERT  INTO Empleados (nombre, direccion, telefono, email, fecha_inicio, salario) VALUES
 ('Ignacio Torres', 'Calle Falsa 123, Ciudad A', '555-1234', 'juan.perez@gmail.com', '2023-01-15', 50000.00),
 ('María Gómez', 'Av. Principal 456, Ciudad B', '555-5678', 'maria.gomez@gmail.com', '2022-08-10', 52000.00),
 ('Jaider Torres', 'Boulevard Central 789, Ciudad C', '555-8765', 'carlos.lopez@gmail.com', '2021-11-05', 48000.00),

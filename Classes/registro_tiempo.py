@@ -8,7 +8,7 @@ class RegistroTiempo:
         self.descripcion = descripcion
     
     @staticmethod
-    def crear_registro_tiempo(registro):
+    def  crear_registro_tiempo(registro):
         conexion = obtener_conexion()
         cursor = conexion.cursor()
         query = """

@@ -20,4 +20,4 @@ class Departamento:
         cursor.execute("SELECT * FROM Departamentos")
         departamentos = cursor.fetchall()
         conexion.close()
-        return departamentos
+        return   departamentos
