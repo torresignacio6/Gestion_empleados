@@ -15,7 +15,7 @@ CREATE  TABLE Departamentos (
     FOREIGN KEY (id_gerente) REFERENCES Empleados(id)
 );
 
-CREATE TABLE Empleados_Departamentos (
+CREATE  TABLE Empleados_Departamentos (
     id_empleado INT,
     id_departamento INT,
     PRIMARY KEY (id_empleado, id_departamento),

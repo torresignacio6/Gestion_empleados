@@ -15,7 +15,7 @@ class  Proyecto:
         conexion.close()
     
     @staticmethod
-    def leer_proyectos():
+    def  leer_proyectos():
         conexion = obtener_conexion()
         cursor = conexion.cursor(dictionary=True)
         cursor.execute("SELECT * FROM Proyectos")

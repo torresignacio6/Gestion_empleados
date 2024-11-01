@@ -12,7 +12,7 @@ INSERT  INTO Departamentos (nombre, id_gerente) VALUES
 ('Recursos Humanos', 4),
 ('Marketing', 5);
 
-INSERT INTO Empleados_Departamentos (id_empleado, id_departamento) VALUES
+INSERT  INTO Empleados_Departamentos (id_empleado, id_departamento) VALUES
 (1, 1),
 (2, 2),
 (3, 3),

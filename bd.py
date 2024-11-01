@@ -1,5 +1,5 @@
 import  mysql.connector
-from mysql.connector import errorcode
+from  mysql.connector import errorcode
 
 def  obtener_conexion(user,password,server,database, consulta):
     config={

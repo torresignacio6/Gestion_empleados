@@ -21,7 +21,7 @@ class  Empleado:
         conexion.close()
 
     @staticmethod
-    def leer_empleados():
+    def  leer_empleados():
         conexion = obtener_conexion()
         cursor = conexion.cursor(dictionary=True)
         cursor.execute("SELECT * FROM Empleados")

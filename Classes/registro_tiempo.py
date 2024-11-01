@@ -20,7 +20,7 @@ class RegistroTiempo:
         conexion.close()
     
     @staticmethod
-    def  leer_registros_tiempo():
+    def   leer_registros_tiempo():
         conexion = obtener_conexion()
         cursor = conexion.cursor(dictionary=True)
         cursor.execute("SELECT * FROM Registro_Tiempo")
