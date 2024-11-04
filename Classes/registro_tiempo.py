@@ -1,6 +1,6 @@
-from bd import obtener_conexion
+from bd import bd
 class RegistroTiempo:
-    def __init__(self, id_empleado, id_proyecto, fecha, horas_trabajadas, descripcion):
+    def __init__(self, id_empleado, id_proyecto, fecha, horas_trabajadas, descripcion,):
         self.id_empleado = id_empleado
         self.id_proyecto = id_proyecto
         self.fecha = fecha
@@ -9,7 +9,7 @@ class RegistroTiempo:
     
     @staticmethod
     def crear_registro_tiempo(registro):
-        conexion = obtener_conexion()
+        conexion = bd()
         cursor = conexion.cursor()
         query = """
             INSERT INTO Registro_Tiempo (id_empleado, id_proyecto, fecha, horas_trabajadas, descripcion)
@@ -21,7 +21,7 @@ class RegistroTiempo:
     
     @staticmethod
     def  leer_registros_tiempo():
-        conexion = obtener_conexion()
+        conexion = bd()
         cursor = conexion.cursor(dictionary=True)
         cursor.execute("SELECT * FROM Registro_Tiempo")
         registros = cursor.fetchall()

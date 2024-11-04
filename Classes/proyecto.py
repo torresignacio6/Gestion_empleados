@@ -1,4 +1,4 @@
-from bd import obtener_conexion
+from bd import bd
 class Proyecto:
     def __init__(self, nombre, descripcion, fecha_inicio):
         self.nombre = nombre
@@ -7,7 +7,7 @@ class Proyecto:
     
     @staticmethod
     def crear_proyecto(proyecto):
-        conexion = obtener_conexion()
+        conexion = bd()
         cursor = conexion.cursor()
         query = "INSERT INTO Proyectos (nombre, descripcion, fecha_inicio) VALUES (%s, %s, %s)"
         cursor.execute(query, (proyecto.nombre, proyecto.descripcion, proyecto.fecha_inicio))
@@ -16,7 +16,7 @@ class Proyecto:
     
     @staticmethod
     def  leer_proyectos():
-        conexion = obtener_conexion()
+        conexion = bd()
         cursor = conexion.cursor(dictionary=True)
         cursor.execute("SELECT * FROM Proyectos")
         proyectos = cursor.fetchall()

@@ -1,4 +1,4 @@
-from bd import obtener_conexion
+from bd import bd
 class Departamento:
     def __init__(self, nombre, id_gerente):
         self.nombre = nombre
@@ -6,7 +6,7 @@ class Departamento:
     
     @staticmethod
     def crear_departamento(departamento):
-        conexion = obtener_conexion()
+        conexion = bd()
         cursor = conexion.cursor()
         query = "INSERT INTO Departamentos (nombre, id_gerente) VALUES (%s, %s)"
         cursor.execute(query, (departamento.nombre, departamento.id_gerente))
@@ -15,7 +15,7 @@ class Departamento:
     
     @staticmethod
     def leer_departamentos():
-        conexion = obtener_conexion()
+        conexion = bd()
         cursor = conexion.cursor(dictionary=True)
         cursor.execute("SELECT * FROM Departamentos")
         departamentos = cursor.fetchall()
