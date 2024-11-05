@@ -1,4 +1,4 @@
-from bd import obtener_conexion
+from bd import bd
 class Empleado:
     def __init__(self, nombre, direccion, telefono, email, fecha_inicio, salario):
         self.nombre = nombre
@@ -10,7 +10,7 @@ class Empleado:
     
     @staticmethod
     def crear_empleado(empleado):
-        conexion = obtener_conexion()
+        conexion = bd()
         cursor = conexion.cursor()
         query = """
             INSERT INTO Empleados (nombre, direccion, telefono, email, fecha_inicio, salario) 
@@ -22,7 +22,7 @@ class Empleado:
 
     @staticmethod
     def  leer_empleados():
-        conexion = obtener_conexion()
+        conexion = bd()
         cursor = conexion.cursor(dictionary=True)
         cursor.execute("SELECT * FROM Empleados")
         empleados = cursor.fetchall()
@@ -31,7 +31,7 @@ class Empleado:
     
     @staticmethod
     def actualizar_empleado(empleado_id, nuevo_salario):
-        conexion = obtener_conexion()
+        conexion = bd()
         cursor = conexion.cursor()
         query = "UPDATE Empleados SET salario = %s WHERE id = %s"
         cursor.execute(query, (nuevo_salario, empleado_id))
@@ -40,7 +40,7 @@ class Empleado:
     
     @staticmethod
     def eliminar_empleado(empleado_id):
-        conexion = obtener_conexion()
+        conexion = bd()
         cursor = conexion.cursor()
         query = "DELETE FROM Empleados WHERE id = %s"
         cursor.execute(query, (empleado_id,))
