@@ -1,15 +1,15 @@
 CREATE  TABLE Empleados (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_empleado INT PRIMARY KEY  AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL,
     direccion VARCHAR(255),
     telefono VARCHAR(15),
     email VARCHAR(100),
-    fecha_inicio DATE,
-    salario DECIMAL(10, 2)
+    fecha_inicio VARCHAR(20),
+    salario INT
 );
 
 CREATE TABLE Departamentos (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_departamento INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL,
     id_gerente INT,
     FOREIGN KEY (id_gerente) REFERENCES Empleados(id)
@@ -24,10 +24,10 @@ CREATE TABLE Empleados_Departamentos (
 );
 
 CREATE TABLE Proyectos (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_proyecto INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL,
-    descripcion TEXT,
-    fecha_inicio DATE
+    descripcion VARCHAR(255),
+    fecha_inicio VARCHAR(20)
 );
 
 CREATE TABLE Empleados_Proyectos (
@@ -39,12 +39,12 @@ CREATE TABLE Empleados_Proyectos (
 );
 
 CREATE TABLE Registro_Tiempo (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+    id_reg_temp INT PRIMARY KEY AUTO_INCREMENT,
     id_empleado INT,
     id_proyecto INT,
-    fecha DATE,
-    horas_trabajadas DECIMAL(5, 2),
-    descripcion TEXT,
+    fecha VARCHAR(20),
+    horas_trabajadas INT,
+    descripcion VARCHAR(255),
     FOREIGN KEY (id_empleado) REFERENCES Empleados(id),
     FOREIGN KEY (id_proyecto) REFERENCES Proyectos(id)
 );
