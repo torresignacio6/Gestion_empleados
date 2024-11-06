@@ -26,15 +26,14 @@ def ejecutar_consulta(consulta):
         cursor = conexion.cursor()
         try:
             cursor.execute(consulta)
-            resultados = cursor.fetchall()
-            for registro in resultados:
-                print(registro)
+            resultados = cursor.fetchall()  # Guardamos los resultados
+            return resultados  # Los devolvemos a quien llame a esta función
         except mysql.connector.Error as err:
             print(f"Error al ejecutar la consulta: {err}")
+            return None  # Si ocurre un error, retornamos None
         finally:
             cursor.close()
             conexion.close()
     else:
         print("No se pudo establecer la conexión a la base de datos.")
-
-ejecutar_consulta("SELECT * FROM empleados;")
+        return None  # Si no se pudo conectar, también retornamos None
