@@ -1,33 +1,32 @@
-import mysql.connector
-from mysql.connector import Error 
-from bd import bd
+from mysql.connector import (connection)
+import submenu as pn
 
-def ejecutar_consulta():
-    try:
-        conexion = bd() 
-        if conexion:
-            cursor = conexion.cursor()
-            query = "SHOW TABLES;"        
-            cursor.execute(query)
-            resultados = cursor.fetchall()
-            if resultados:
-                for registro in resultados:
-                    print(registro)
-            else:
-                print("Su búsqueda no arrojó resultados.")
+def menu(con):
+    while True:
+        print("\n^^^ Menú Principal ^^^")
+        print("1. Menú de Empleados")
+        print("2. Salir")
+        
+        opcion = input("Laburá loco:  ")
+        
+        if opcion == "1":
+            pn.submenu(con)
+        elif opcion == "2":
+            break
         else:
-            print("No se pudo establecer la conexión a la base de datos.")
+            print("Como tan weon.")
 
-    except Error as error: 
-        print(f"Error al ejecutar la consulta: {error}")
-    
-    finally:
-        if conexion and conexion.is_connected():
-            cursor.close()
-            conexion.close()
+def main():
+    cnx = connection.MySQLConnection(
+        user='root', 
+        password='', 
+        host='127.0.0.1', 
+        database='nachodb',
+        port = 3306
+        )
+    cursor = cnx.cursor()
+    cursor.execute(menu(cnx))
+    cnx.close()
 
-
-ejecutar_consulta()
-
-
-
+if __name__ == "__main__":
+    main()
