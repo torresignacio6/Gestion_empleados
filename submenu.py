@@ -18,7 +18,7 @@ def submenu(con):
         elif opcion == "3":
             fn.verEmpleado(con)
         elif opcion == "4":
-            print("Cerrando.")
+            print("Cerrando...")
             break
         else:
             print("Opción inválida. Por favor, selecciona una opción entre 1 y 4.")
