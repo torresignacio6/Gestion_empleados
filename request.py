@@ -15,4 +15,4 @@ def consultar_api():
     except requests.exceptions.ConnectionError:
         print(" error de conexion")
     except requests.exceptions.RequestException:
-        print("errror en la solicitud")
+        print("error en la solicitud")
